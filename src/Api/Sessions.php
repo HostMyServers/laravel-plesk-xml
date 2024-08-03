@@ -17,10 +17,10 @@ class Sessions extends AbstractApi
     /**
      * @return mixed
      */
-    public function create($params)
+    public function create($params, $ip)
     {
         return $this->post([
-            'server' => ['create_session' => ['login' => $params, 'data' => ['user_ip' => base64_encode(request()->ip()), 'source_server' => '']]]
+            'server' => ['create_session' => ['login' => $params, 'data' => ['user_ip' => base64_encode($ip), 'source_server' => '']]]
         ]);
     }
 

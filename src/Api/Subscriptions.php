@@ -90,4 +90,17 @@ class Subscriptions extends AbstractApi
             'webspace' => ['get_traffic' => ['filter' => $params]]
         ]);
     }
+
+    /**
+     * @param $params
+     * @return mixed
+     * @throws \Http\Client\Exception
+     */
+    public function update($params)
+    {
+        return $this->post([
+            'webspace' => ['set' => $params]
+        ]);
+    }
+
 }
